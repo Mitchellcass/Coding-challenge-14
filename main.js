@@ -67,3 +67,11 @@ function displayTickets(tickets) {
     });
 }
 
+// Task 4: Call the Function to Fetch Tickets
+fetchTickets().then(tickets => {
+    if (tickets) {
+        displayTickets(tickets); 
+    }
+}).catch(error => {
+    console.error('Error fetching tickets:', error); // Log errors
+});
