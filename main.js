@@ -1,3 +1,4 @@
+//Task 1:  Fetch Tickets Using Async/Await and Handle Errors
 async function fetchTickets() {
     const url = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -18,3 +19,18 @@ async function fetchTickets() {
 
         return tickets;
     } catch (error) {
+
+ document.getElementById('error-message').textContent = error.message;
+ throw error; 
+} finally {
+ console.log('Fetch attempt complete.');
+}
+}
+
+// Call function to fetch tickets
+fetchTickets().then(tickets => {
+if (tickets) {
+ displayTickets(tickets);
+}
+});
+
