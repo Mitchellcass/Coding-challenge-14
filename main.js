@@ -34,3 +34,18 @@ if (tickets) {
 }
 });
 
+function displayTickets(tickets) {
+    const ticketContainer = document.getElementById('ticket-container');
+
+    tickets.forEach(ticket => {
+        const ticketElement = document.createElement('div');
+        ticketElement.innerHTML = `
+            <h3>Ticket ID: ${ticket.id}</h3>
+            <p><strong>Customer Name:</strong> User ${ticket.userId}</p>
+            <p><strong>Issue Description:</strong> ${ticket.title}</p>
+            <p><strong>Details:</strong> ${ticket.body}</p>
+            <hr>
+        `;
+        ticketContainer.appendChild(ticketElement);
+    });
+}
