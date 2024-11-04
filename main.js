@@ -49,3 +49,21 @@ function displayTickets(tickets) {
         ticketContainer.appendChild(ticketElement);
     });
 }
+//Task 2: Display tickets dynamically on the page
+function displayTickets(tickets) {
+    const ticketContainer = document.getElementById('ticket-container');
+    ticketContainer.innerHTML = ''; 
+
+    tickets.forEach(ticket => {
+        const ticketDiv = document.createElement('div');
+        ticketDiv.innerHTML = `
+            <h3>Ticket ID: ${ticket.id}</h3>
+            <p>Customer Name: User ${ticket.userId}</p>
+            <p>Issue Description: ${ticket.title}</p>
+            <p>Details: ${ticket.body}</p>
+            <hr>
+        `;
+        ticketContainer.appendChild(ticketDiv); 
+    });
+}
+
